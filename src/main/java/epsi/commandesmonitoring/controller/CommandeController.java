@@ -1,22 +1,23 @@
 package epsi.commandesmonitoring.controller;
 
-import java.sql.Date;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
+
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import epsi.commandesmonitoring.model.Commande;
 import epsi.commandesmonitoring.repository.CommandeRepository;
 
 
 
-@Controller
+@RestController
+@RequestMapping("")
 public class CommandeController{
 	
 	@Autowired
@@ -43,4 +44,18 @@ public class CommandeController{
     	model.addAttribute("numberOfCommandesInStateTwo", commandeRepository.countCommandeOfStateTwo());
     	model.addAttribute("numberOfCommandesInStateThree", commandeRepository.countCommandeOfStateThree());
     }*/
+    
+    @PostMapping("")
+    public void insertCommande(@RequestParam(name="magasin") String magasin, @RequestParam(name="acheteur")String acheteur,@RequestParam(name="produit") String produit) {
+    	System.out.println("magasin "+magasin);
+    	Date date = new Date();
+    	Commande commande = new Commande();
+    	commande.setAcheteur(acheteur);
+    	commande.setMagasin(magasin);
+    	commande.setProduit(produit);
+    	commande.setQuantite(1);
+    	commande.setDate_creation_commande(new Date());
+    	//commandeRepository.insertCommande(magasin, produit, acheteur, 1, new Date());
+    	commandeRepository.save(commande);
+    }
 }

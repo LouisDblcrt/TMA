@@ -1,12 +1,9 @@
 package epsi.commandesmonitoring.repository;
 
-import java.sql.Date;
-import java.util.Collection;
 
-import javax.transaction.Transactional;
+import java.util.Date;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -37,4 +34,8 @@ public interface CommandeRepository extends JpaRepository<Commande, Long>{
 	@Transactional
 	@Query(value="insert into Commande (id_magasin,etat,date_creation) values (:idMagasin,:etat,:dateCreation)",nativeQuery=true)
 	void insertCommande(@Param("idMagasin") Integer idMagasin, @Param("etat") Integer etat, @Param("dateCreation") Date dateCreation); */
+	
+	@Query(value="insert into Commande(magasin,produit,acheteur,quantite,date_creation_commande) values (:magasin,:produit,:acheteur,:quantite,:date_creation_commande)",nativeQuery=true)
+	void insertCommande(@Param("magasin") String magasin, @Param("produit") String produit, @Param("acheteur") String acheteur, @Param("quantite") Integer quantite, @Param("date_creation_commande") Date date_creation_commande);
+
 }
