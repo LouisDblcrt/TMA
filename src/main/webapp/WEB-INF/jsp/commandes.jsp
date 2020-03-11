@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <link href="/css/main.css" rel="stylesheet">
 <body>
-<FORM action="/commandes" method="post">
+<FORM name="myForm" onsubmit="return afficherPhrase()" action="/commandes" method="post">
 <label>Choix du magasin</label>
 <SELECT name="magasin" size="1">
 <OPTION>magasin 1</OPTION>
@@ -39,6 +39,12 @@
 </SELECT>
 <input type="submit" value="Envoyer">
 </FORM>
+
+<script>function afficherPhrase() {
+	  var x = "Bonjour monsieur " +  document.forms["myForm"]["acheteur"].value + " vous avez acheter sur le " + document.forms["myForm"]["magasin"].value + " ";
+	  x += "le produit : " + document.forms["myForm"]["produit"].value;
+	    alert(x);
+	  }</script>
 
 
 </body>
