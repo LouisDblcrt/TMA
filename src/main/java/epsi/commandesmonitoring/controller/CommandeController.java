@@ -4,19 +4,19 @@ package epsi.commandesmonitoring.controller;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import epsi.commandesmonitoring.model.Commande;
 import epsi.commandesmonitoring.repository.CommandeRepository;
 
 
 
-@RestController
+@Controller
 @RequestMapping("")
 public class CommandeController{
 	
@@ -45,7 +45,7 @@ public class CommandeController{
     	model.addAttribute("numberOfCommandesInStateThree", commandeRepository.countCommandeOfStateThree());
     }*/
     
-    @PostMapping("")
+    @PostMapping("commandes")
     public void insertCommande(@RequestParam(name="magasin") String magasin, @RequestParam(name="acheteur")String acheteur,@RequestParam(name="produit") String produit) {
     	System.out.println("magasin "+magasin);
     	Date date = new Date();
