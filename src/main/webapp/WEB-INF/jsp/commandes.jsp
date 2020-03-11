@@ -34,7 +34,6 @@
 </SELECT>
 <label>Acheteur</label>
 <SELECT name="acheteur" size="1">
-<OPTION>acheteur1</OPTION>
 <OPTION>acheteur2</OPTION>
 <OPTION>acheteur3</OPTION>
 <OPTION>acheteur4</OPTION>

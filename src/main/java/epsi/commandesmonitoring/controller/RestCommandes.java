@@ -18,7 +18,7 @@ public class RestCommandes {
 	@Autowired
 	CommandeRepository commandeRepository;
 	
-	@GetMapping("{id}")
+	@GetMapping("{magasin}")
 	public float getCommandeByMagasin(@PathVariable(name = "magasin") String magasin) {
 		return commandeRepository.getCAByMagasin(magasin);
 	}
