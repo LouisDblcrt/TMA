@@ -25,14 +25,16 @@ public class CommandeController{
 	
     @GetMapping({"/", "/commandes"})
 	public String getCommandeEtatDemande(Model model){
+    	/*
 		model.addAttribute("listCommandesDemande", commandeRepository.selectCommandeDemande());
    		model.addAttribute("listCommandesEnPrep", commandeRepository.selectCommandeEnPrep());
    		model.addAttribute("listCommandesFini", commandeRepository.selectCommandeFini());
    		model.addAttribute("listCommandesHistorisee", commandeRepository.selectCommandeHistorisee());
-   		model.addAttribute("getLastUpdatedCommande", commandeRepository.selectLastUpdatedCommande());
+   		model.addAttribute("getLastUpdatedCommande", commandeRepository.selectLastUpdatedCommande());*/
 		return "commandes";
 	}
-    
+
+    /*
     @GetMapping({"/monitoring"})
     public void getLastUpdatedCommandes(Model model){
     	model.addAttribute("getLastUpdatedCommande", commandeRepository.selectLastUpdatedCommande());
@@ -40,5 +42,5 @@ public class CommandeController{
     	model.addAttribute("numberOfCommandesInStateOne", commandeRepository.countCommandeOfStateOne());
     	model.addAttribute("numberOfCommandesInStateTwo", commandeRepository.countCommandeOfStateTwo());
     	model.addAttribute("numberOfCommandesInStateThree", commandeRepository.countCommandeOfStateThree());
-    }
+    }*/
 }
