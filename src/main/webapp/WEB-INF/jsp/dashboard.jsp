@@ -20,7 +20,23 @@
     <tbody>
         <tr>
             <td>Magasin 1</td>
-            <td><button onclick=getCA("magasin1")>getCa</button></td>
+            <td id="magasin1">0</td>
+        </tr>
+         <tr>
+            <td>Magasin 2</td>
+            <td id="magasin2">0</td>
+        </tr>
+         <tr>
+            <td>Magasin 3</td>
+            <td id="magasin3">0</td>
+        </tr>
+         <tr>
+            <td>Magasin 4</td>
+            <td id="magasin4">0</td>
+        </tr>
+         <tr>
+            <td>Magasin 5</td>
+            <td id="magasin5">0</td>
         </tr>
     </tbody>
 </table>
@@ -41,6 +57,23 @@ function getCA(magasin){
 	console.log(Http.onreadystatechange);
 }
 
+function getCA2(magasin){
+	    var xhttp = new XMLHttpRequest();
+	    xhttp.onreadystatechange = function() {
+	        if (this.readyState == 4 && this.status == 200) {
+	            document.getElementById(magasin).innerHTML =
+	            this.responseText;
+	       }
+	    };
+	    xhttp.open("GET", "http://localhost:8080/api/commandes/"+magasin, true);
+	    xhttp.send();
+}
+
+getCA2("magasin1");
+getCA2("magasin2");
+getCA2("magasin3");
+getCA2("magasin4");
+getCA2("magasin5");
 </script>
 
 </body>
