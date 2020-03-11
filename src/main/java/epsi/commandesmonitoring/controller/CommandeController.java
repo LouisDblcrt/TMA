@@ -63,7 +63,7 @@ public class CommandeController {
 		commande.setMagasin(magasin);
 		commande.setProduit(produit);
 		commande.setQuantite(1);
-		commande.setPrix(10);
+		commande.setPrix(9);
 		commande.setDate_creation_commande(new Date());
 		commandeRepository.save(commande);
 	}
