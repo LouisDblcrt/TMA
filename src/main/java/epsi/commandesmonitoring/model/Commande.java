@@ -33,6 +33,9 @@ public class Commande {
 	
 	@NotNull
 	private Date date_creation_commande;
+	
+	@NotNull
+	private float prix;
 
 	public Long getId() {
 		return id;
@@ -64,6 +67,14 @@ public class Commande {
 
 	public void setAcheteur(String acheteur) {
 		this.acheteur = acheteur;
+	}
+
+	public float getPrix() {
+		return prix;
+	}
+
+	public void setPrix(float prix) {
+		this.prix = prix;
 	}
 
 	public Integer getQuantite() {

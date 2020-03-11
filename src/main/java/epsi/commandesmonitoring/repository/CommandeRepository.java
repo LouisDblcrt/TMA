@@ -35,7 +35,9 @@ public interface CommandeRepository extends JpaRepository<Commande, Long>{
 	@Query(value="insert into Commande (id_magasin,etat,date_creation) values (:idMagasin,:etat,:dateCreation)",nativeQuery=true)
 	void insertCommande(@Param("idMagasin") Integer idMagasin, @Param("etat") Integer etat, @Param("dateCreation") Date dateCreation); */
 	
-	@Query(value="insert into Commande(magasin,produit,acheteur,quantite,date_creation_commande) values (:magasin,:produit,:acheteur,:quantite,:date_creation_commande)",nativeQuery=true)
-	void insertCommande(@Param("magasin") String magasin, @Param("produit") String produit, @Param("acheteur") String acheteur, @Param("quantite") Integer quantite, @Param("date_creation_commande") Date date_creation_commande);
-
+	@Query(value="insert into Commande(magasin,produit,acheteur,quantite,date_creation_commande) values (:magasin,:produit,:acheteur,:quantite,:date_creation_commande,:prix)",nativeQuery=true)
+	void insertCommande(@Param("magasin") String magasin, @Param("produit") String produit, @Param("acheteur") String acheteur, @Param("quantite") Integer quantite, @Param("date_creation_commande") Date date_creation_commande,@Param("prix") float prix);
+	
+	@Query("SELECT sum(prix) FROM Commande c where c.magasin= :magasin")
+	float getCAByMagasin(@Param("magasin")String magasin);
 }
