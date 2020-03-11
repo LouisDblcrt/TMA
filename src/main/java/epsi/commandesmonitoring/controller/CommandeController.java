@@ -23,7 +23,7 @@ public class CommandeController{
 	CommandeRepository commandeRepository;
 	
 	
-    @GetMapping({"/commandes"})
+    @GetMapping({"/", "/commandes"})
 	public String getCommandeEtatDemande(Model model){
 		model.addAttribute("listCommandesDemande", commandeRepository.selectCommandeDemande());
    		model.addAttribute("listCommandesEnPrep", commandeRepository.selectCommandeEnPrep());
