@@ -40,7 +40,7 @@
 <OPTION>acheteur 4</OPTION>
 <OPTION>acheteur 5</OPTION>
 </SELECT>
-<input type="submit" value="Envoyer" onclick="print()">
+<input type="submit" value="Envoyer">
 </FORM>
 
 <script>function afficherPhrase() {
