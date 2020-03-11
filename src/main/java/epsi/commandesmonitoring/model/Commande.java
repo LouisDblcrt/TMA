@@ -34,5 +34,53 @@ public class Commande {
 	@NotNull
 	private Date date_creation_commande;
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getMagasin() {
+		return magasin;
+	}
+
+	public void setMagasin(String magasin) {
+		this.magasin = magasin;
+	}
+
+	public String getProduit() {
+		return produit;
+	}
+
+	public void setProduit(String produit) {
+		this.produit = produit;
+	}
+
+	public String getAcheteur() {
+		return acheteur;
+	}
+
+	public void setAcheteur(String acheteur) {
+		this.acheteur = acheteur;
+	}
+
+	public Integer getQuantite() {
+		return quantite;
+	}
+
+	public void setQuantite(Integer quantite) {
+		this.quantite = quantite;
+	}
+
+	public Date getDate_creation_commande() {
+		return date_creation_commande;
+	}
+
+	public void setDate_creation_commande(Date date_creation_commande) {
+		this.date_creation_commande = date_creation_commande;
+	}
+
 
 }
