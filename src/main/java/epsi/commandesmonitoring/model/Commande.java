@@ -20,64 +20,19 @@ public class Commande {
 	private Long id;
 	
 	@NotNull
-	private Long id_magasin;
+	private String magasin;
 	
 	@NotNull
-	@Enumerated(EnumType.ORDINAL)
-	private Etat etat;
+	private String produit;
 	
 	@NotNull
-	private Date date_creation;
+	private String acheteur;
 	
 	@NotNull
-	private Date date_modification;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Long getId_magasin() {
-		return id_magasin;
-	}
-
-	public void setId_magasin(Long id_magasin) {
-		this.id_magasin = id_magasin;
-	}
-
+	private Integer quantite;
 	
-	public Etat getEtat() {
-		return etat;
-	}
+	@NotNull
+	private Date date_creation_commande;
 
-	public void setEtat(Etat etat) {
-		this.etat = etat;
-	}
 
-	public Date getDate_creation() {
-		return date_creation;
-	}
-
-	public void setDate_creation(Date date_creation) {
-		this.date_creation = date_creation;
-	}
-
-	public Date getDate_modification() {
-		return date_modification;
-	}
-
-	public void setDate_modification(Date date_modification) {
-		this.date_modification = date_modification;
-	}
-	
-	@Override
-	public String toString() {
-		return "Commande [id=" + id + ", id_magasin=" + id_magasin + ", etat=" + etat + ", date_creation="
-				+ date_creation + ", date_modification=" + date_modification + "]";
-	}
-	
-	
 }
