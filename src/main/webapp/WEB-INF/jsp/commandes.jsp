@@ -13,20 +13,20 @@
 <FORM name="myForm" onsubmit="return afficherPhrase()" action="/commandes" method="post">
 <label>Choix du magasin</label>
 <SELECT name="magasin" size="1">
-<OPTION>magasin 1</OPTION>
-<OPTION>magasin 2</OPTION>
-<OPTION>magasin 3</OPTION>
-<OPTION>magasin 4</OPTION>
-<OPTION>magasin 5</OPTION>
+<OPTION>magasin1</OPTION>
+<OPTION>magasin2</OPTION>
+<OPTION>magasin3</OPTION>
+<OPTION>magasin4</OPTION>
+<OPTION>magasin5</OPTION>
 </SELECT>
 <label>Choix du produit</label>
 <SELECT name="produit" size="1">
-<OPTION>produit 1</OPTION>
-<OPTION>produit 2</OPTION>
-<OPTION>produit 3</OPTION>
-<OPTION>produit 4</OPTION>
-<OPTION>produit 5</OPTION>
-<OPTION>produit 6</OPTION>
+<OPTION>produit1</OPTION>
+<OPTION>produit2</OPTION>
+<OPTION>produit3</OPTION>
+<OPTION>produit4</OPTION>
+<OPTION>produit5</OPTION>
+<OPTION>produit6</OPTION>
 <OPTION>produit 7</OPTION>
 <OPTION>produit 8</OPTION>
 <OPTION>produit 9</OPTION>
@@ -34,14 +34,16 @@
 </SELECT>
 <label>Acheteur</label>
 <SELECT name="acheteur" size="1">
-<OPTION>acheteur 1</OPTION>
-<OPTION>acheteur 2</OPTION>
-<OPTION>acheteur 3</OPTION>
-<OPTION>acheteur 4</OPTION>
-<OPTION>acheteur 5</OPTION>
+<OPTION>acheteur1</OPTION>
+<OPTION>acheteur2</OPTION>
+<OPTION>acheteur3</OPTION>
+<OPTION>acheteur4</OPTION>
+<OPTION>acheteur5</OPTION>
 </SELECT>
 <input type="submit" value="Envoyer">
+<p>Prix: 10 euros TTC, TVA 20%, PRIX HT : 8 euros.</p>
 </FORM>
+
 
 <script>function afficherPhrase() {
 	  var x = "Bonjour monsieur " +  document.forms["myForm"]["acheteur"].value + " vous avez acheter sur le " + document.forms["myForm"]["magasin"].value + " ";
