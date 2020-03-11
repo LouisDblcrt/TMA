@@ -7,6 +7,9 @@
 <meta charset="UTF-8">
 <link href="/css/main.css" rel="stylesheet">
 <body>
+<h1>Shopping</h1>
+<h2>Team Patrick BALKANY</h2>
+<br> <br> <br>
 <FORM name="myForm" onsubmit="return afficherPhrase()" action="/commandes" method="post">
 <label>Choix du magasin</label>
 <SELECT name="magasin" size="1">
